@@ -1,0 +1,6 @@
+numpy
+tenserflow
+flask
+python
+jupyter notebook
+anaconda
