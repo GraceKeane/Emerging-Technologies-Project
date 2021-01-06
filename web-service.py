@@ -3,20 +3,23 @@ import flask as fl
 # numpy for numerical work.
 import numpy as np
 
+import tensorflow as tf
+
 # Create a new web app.
 app = fl.Flask(__name__)
 
 # Add root route.
-@app.route("/home/")
+@app.route("/")
 def home():
   return app.send_static_file('index.html')
 
-# Add uniform route.
-@app.route('/api/uniform')
-def uniform():
-  return {"value": np.random.uniform()}
+@app.route("/powerVal", method=["POST"])
+def powerValuesOutput():
+  ws = float(request.get_json()["val"])
+  projectModel = tf.keras.models.load_projectModel("savedValues.h5")
+  pred = projectModel.predict([windspeed])
+  listPred = prediction.tolist()
+  return {'prediction': listPred[0]}
 
-# Add normal route.
-@app.route('/api/normal')
-def normal():
-  return {"value": np.random.normal()}
+if __name__ == 'main':
+  app.run(debug=True)
