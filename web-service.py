@@ -15,7 +15,7 @@ def home():
 
 # Adapted from
 # https://flask.palletsprojects.com/en/1.1.x/quickstart/#http-methods
-# 
+
 @app.route("/power", methods=["POST"])
 def powerOutput():
   ws = float(request.get_json()["value"])
