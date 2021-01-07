@@ -7,7 +7,7 @@ from flask import request
 # Create a new web app.
 app = fl.Flask(__name__)
 
-# Add root route. 
+# Add route. 
 # Connects to style page (index.html)
 @app.route("/")
 def home():
