@@ -48,6 +48,7 @@ $ python -m flask run
  - Python 3.8
  - Keras
  - Docker
+ - WSL2
  
  ### Model requirements
 - numpy==1.19.2
